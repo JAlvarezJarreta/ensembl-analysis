@@ -33,3 +33,4 @@ a.out
 *.class
 modules/t/MultiTestDB.conf
 modules/Bio/EnsEMBL/Analysis/Config/General.pm
+.nextflow
