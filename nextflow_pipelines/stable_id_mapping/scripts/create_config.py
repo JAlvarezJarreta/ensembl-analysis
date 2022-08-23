@@ -59,6 +59,8 @@ with open("template.pm") as file :
     configuration = configuration.replace("__TRGNAME__", args.trgname)
 
 # write the configuration file
-outfile=args.basedir+args.species+'_mapping.conf'
+outpath = Path(args.basedir)
+filename = args.species+'_mapping.conf'
+outfile = outpath / filename
 with open(outfile, "w") as file:
     file.write(configuration)
