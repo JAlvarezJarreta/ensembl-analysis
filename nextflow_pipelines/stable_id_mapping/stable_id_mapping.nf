@@ -18,7 +18,7 @@
 dbhost.str = 'mysql-ens-genebuild-prod-1'
 dbport.str = '4527'
 sthost.str = ''
-stport.str = 
+stport.str = ''
 
 process ids_to_null {
   	input:
@@ -35,28 +35,40 @@ process ids_to_null {
   	"""
 }
 
+process gather_data{
+	input:
+		dbname
+
+	output:
+		basedir, species, srchost, srcport, srcname, trghost, trgport, trgname
+
+	"""
+	//
+	"""
+}
+
 process create_config{
   	input:
-  	  	//
+  	  	basedir, species, srchost, srcport, srcname, trghost, trgport, trgname
 
   	output:
-  	  	//
+  	  	config_file
 
   	"""
-  	//
+  	python3 scripts/create_config.py //+args
   	"""
 }
 
 process run_config{
 	input:
-		//
+		config_file
 
 	output:
 		//
 
 
 	"""
-	//
+	$ENSCODE/ensembl/misc-scripts/id_mapping/myRun.ksh -c ${config_file}	
 	"""
 }
 
