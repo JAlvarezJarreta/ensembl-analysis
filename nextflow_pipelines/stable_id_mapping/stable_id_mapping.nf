@@ -64,8 +64,7 @@ process run_config{
 		config_file
 
 	output:
-		//
-
+		stdout
 
 	"""
 	$ENSCODE/ensembl/misc-scripts/id_mapping/myRun.ksh -c ${config_file}	
@@ -75,5 +74,5 @@ process run_config{
 workflow {
 	ids_to_null($dbname) | view
 	*add stopper
-	create_config | run_config
+	gather_data ($dbname) | create_config | run_config | view
 }
