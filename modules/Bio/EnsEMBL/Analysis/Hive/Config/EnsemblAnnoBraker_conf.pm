@@ -16,7 +16,7 @@ limitations under the License.
 
 =cut
 
-package EnsemblAnnoBraker_conf;
+package Bio::EnsEMBL::Analysis::Hive::Config::EnsemblAnnoBraker_conf;
 
 use strict;
 use warnings;
