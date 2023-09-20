@@ -49,7 +49,7 @@ use parent ('Bio::EnsEMBL::Analysis::Hive::RunnableDB::HiveBaseRunnableDB');
 
  Arg [1]    : None
  Description: Returns the defaults parameters
-               ensembl_release => $ENV{ENSEMBL_RELEASE},
+               ensembl_release => $ENV{ENSEMBL_VERSION},
  Returntype : None
  Exceptions : None
 
@@ -60,7 +60,7 @@ sub param_defaults {
 
   return {
     %{$self->SUPER::param_defaults},
-    ensembl_release => $ENV{ENSEMBL_RELEASE},
+    ensembl_release => $ENV{ENSEMBL_VERSION},
   }
 }
 

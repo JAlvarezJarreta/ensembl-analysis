@@ -162,7 +162,7 @@ sub default_options {
     'core_db_port'   => $self->o('dna_db_port'),
 
     # This is used for the ensembl_production and the ncbi_taxonomy databases
-    'ensembl_release'      => $ENV{ENSEMBL_RELEASE},     # this is the current release version on staging to be able to get the correct database
+    'ensembl_release'      => $ENV{ENSEMBL_VERSION},     # this is the current release version on staging to be able to get the correct database
     'production_db_server' => 'mysql-ens-meta-prod-1',
     'production_db_port'   => '4483',
 

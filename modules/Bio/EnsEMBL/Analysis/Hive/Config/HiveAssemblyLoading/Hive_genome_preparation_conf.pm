@@ -94,7 +94,7 @@ sub default_options {
 'contigs_source' => 'ncbi',
 'primary_assembly_dir_name' => 'Primary_Assembly',
 
-'ensembl_release' => $ENV{ENSEMBL_RELEASE},
+'ensembl_release' => $ENV{ENSEMBL_VERSION},
 
 ########################
 # db info

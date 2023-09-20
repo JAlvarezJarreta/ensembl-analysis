@@ -65,7 +65,7 @@ sub default_options {
         use_jira => 1,
         jira_user => '' || $ENV{JIRA_USER},
         jira_password => '' || $ENV{JIRA_PASS},
-        ensembl_release => $ENV{ENSEMBL_RELEASE}, # Use it on the commandline: -ensembl_release XX
+        ensembl_release => $ENV{ENSEMBL_VERSION}, # Use it on the commandline: -ensembl_release XX
         #working_dir => '', # Use it on the command line or uncomment: -working_dir /path/to/my/scratch/relco_duties_87
         #user => '', # Use it on the command line or uncomment: -user mysql_rw_user
         #password => '', # Use it on the command line or uncomment: -password mysql_rw_password
@@ -178,7 +178,7 @@ sub pipeline_analyses {
   my $password = $self->o('jira_password');
   if ($self->o('use_jira') eq '1') {
     %jira_tickets = (
-      version_ticket_name => 'Update release ENSEMBL_RELEASE in genebuild.sh to '.$self->o('ensembl_release'),
+      version_ticket_name => 'Update release ENSEMBL_VERSION in genebuild.sh to '.$self->o('ensembl_release'),
       release_ticket_name  => 'Genebuild Relco release '.$self->o('ensembl_release'),
       species_ticket_name  => 'GENCODE scripts release '.$self->o('ensembl_release'),
       datafile_ticket_name => 'Check data_file scripts release '.$self->o('ensembl_release'),

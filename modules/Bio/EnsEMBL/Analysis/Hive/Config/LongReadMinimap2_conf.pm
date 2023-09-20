@@ -21,7 +21,7 @@ sub default_options {
 'long_read_fastq_dir'    => '', # Dir where the fastq files are (or where they will get downloaded to if they don't already exist)
 
 'dbowner'                => '' || $ENV{USER},
-'release_number'         => '' || $ENV{ENSEMBL_RELEASE},
+'release_number'         => '' || $ENV{ENSEMBL_VERSION},
 'dna_db_server'          => '',
 'dna_db_port'            => '',
 'pipe_db_server'         => '',
