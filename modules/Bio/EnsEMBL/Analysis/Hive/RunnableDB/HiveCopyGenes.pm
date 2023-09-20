@@ -73,7 +73,7 @@ use List::Util qw(sum);
 
 sub param_defaults {
     return {
-      copy_genes_path => '$ENSCODE/ensembl-analysis/scripts/genebuild/',
+      copy_genes_path => '$ENSEMBL_ROOT_DIR/ensembl-analysis/scripts/genebuild/',
       copy_genes_script_name => 'copy_genes.pl',
 
       # copy_genes.pl script parameters

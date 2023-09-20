@@ -36,7 +36,7 @@ This module runs merge.pl on eHive. Please see merge.pl for further details abou
 =head1 EXAMPLE USAGE
 
 standaloneJob.pl Bio::EnsEMBL::Analysis::Hive::RunnableDB::HiveMerge
-                               -ensembl_analysis_base $ENSCODE/ensembl-analysis
+                               -ensembl_analysis_base $ENSEMBL_ROOT_DIR/ensembl-analysis
                                -host_secondary ENSEMBLHOST
                                -port_secondary ENSEMBLPORT
                                -user_secondary READ_ONLY_USER

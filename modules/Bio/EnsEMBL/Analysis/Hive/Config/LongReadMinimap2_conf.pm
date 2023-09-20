@@ -54,7 +54,7 @@ sub default_options {
 'samtools_path'         => '/nfs/software/ensembl/RHEL7-JUL2017-core2/linuxbrew/bin/samtools',
 'use_threads'           => 1,
 
-'enscode_root_dir'      => '' || $ENV{ENSCODE_DIR}, # git repo checkouts
+'enscode_root_dir'      => '' || $ENV{ENSEMBL_ROOT_DIR}, # git repo checkouts
 
 'pipeline_name'         => '' || $self->o('production_name').'_'.$self->o('release_number').'_lrminimap2',
 

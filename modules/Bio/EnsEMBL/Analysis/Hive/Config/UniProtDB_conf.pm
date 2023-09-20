@@ -70,8 +70,8 @@ sub default_options {
         blast_type        => 'ncbi', # Should be either 'ncbi' or 'wu'
         slack_token       => $ENV{SLACK_GENEBUILD},
         slack_hook_url    => 'https://hooks.slack.com/services/'.$self->o('slack_token'),
-        embl2fasta_script => $ENV{'EMBL2FASTA_SCRIPT'} || catfile($ENV{ENSCODE}, 'ensembl-analysis', 'scripts', 'databases', 'EMBL2fasta.pl'),
-        process_isoforms_script => $ENV{'PROCESS_ISOFORMS_SCRIPT'} || catfile($ENV{ENSCODE}, 'ensembl-analysis', 'scripts', 'databases', 'process_uniprot_isoforms.pl'),
+        embl2fasta_script => $ENV{'EMBL2FASTA_SCRIPT'} || catfile($ENV{ENSEMBL_ROOT_DIR}, 'ensembl-analysis', 'scripts', 'databases', 'EMBL2fasta.pl'),
+        process_isoforms_script => $ENV{'PROCESS_ISOFORMS_SCRIPT'} || catfile($ENV{ENSEMBL_ROOT_DIR}, 'ensembl-analysis', 'scripts', 'databases', 'process_uniprot_isoforms.pl'),
         kill_list_host => '',
         kill_list_port => '',
         kill_list_user => '',

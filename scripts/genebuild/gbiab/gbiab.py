@@ -2387,7 +2387,7 @@ def run_genblast_align(
         subprocess.run(
             [
                 "cp",
-                os.environ["ENSCODE"]
+                os.environ["ENSEMBL_ROOT_DIR"]
                 + "/ensembl-analysis/scripts/genebuild/gbiab/support_files/alignscore.txt",
                 "./",
             ]

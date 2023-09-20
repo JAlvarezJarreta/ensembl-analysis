@@ -56,7 +56,7 @@ Read ensembl-personal/genebuilders/sap_assembly_loading file for further informa
 
 -prod_dbpass  production db password
 
--enscode	    path to the directories containing ensembl, ensembl-pipeline, ensembl-analysis. If not specified ENSCODE environment variable will be used
+-enscode	    path to the directories containing ensembl, ensembl-pipeline, ensembl-analysis. If not specified ENSEMBL_ROOT_DIR environment variable will be used
 
 -ass_name	    Unique name that identifies the assembly. Check the genebuilders' sap_assembly_loading document if you do not know how to choose it.
 
@@ -175,10 +175,10 @@ if (!$ftp_species_path or !$local_path or
 
 if( !$dir_enscode )
 {
-    $dir_enscode = $ENV{'ENSCODE'} ;
+    $dir_enscode = $ENV{'ENSEMBL_ROOT_DIR'} ;
     if( !$dir_enscode )
     {
-        print "Please specify ENSCODE directory\n" ;
+        print "Please specify ENSEMBL_ROOT_DIR directory\n" ;
         &usage;
         exit(1);
     }
@@ -1140,7 +1140,7 @@ $0 -ftp_species_path <ftp_species_path> -local_path <local_path> -dbhost <dbhost
 
 -prod_dbpass  production db password
 
--enscode      path to the directories containing ensembl, ensembl-pipeline, ensembl-analysis. If not specified ENSCODE environment variable will be used
+-enscode      path to the directories containing ensembl, ensembl-pipeline, ensembl-analysis. If not specified ENSEMBL_ROOT_DIR environment variable will be used
 
 -ensgbscripts path to the Genebuilder scripts directory. If not specified ENSGBSCRIPT envrionment variable will be used.
 

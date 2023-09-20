@@ -37,7 +37,7 @@ USAGE=0
 INIT_PIPE=1
 RUN_PIPE=1
 BASE_UNIPROT_PATH="$BLASTDB_DIR/uniprot"
-ENSEMBL_BASE=$ENSCODE
+ENSEMBL_BASE=$ENSEMBL_ROOT_DIR
 while getopts "s:d:h:u:p:P:IRj:k:l:m:n:" o; do
     case $o in
         d ) BASE_UNIPROT_PATH=$OPTARG;;
@@ -62,7 +62,7 @@ export PROCESS_ISOFORMS_SCRIPT="$ENSEMBL_BASE/ensembl-analysis/scripts/databases
 if [ $USAGE -eq 1 ]; then
   echo "You should not need to change anything, it should by default init the pipeline and start running it."
   echo "  d Destination directory, default is $BLASTDB_DIR/uniprot"
-  echo "  s Base directory where your Perl API are, default is $ENSCODE"
+  echo "  s Base directory where your Perl API are, default is $ENSEMBL_ROOT_DIR"
   echo "  h Host server for the Hive pipeline database"
   echo "  u User name for the Hive pipeline database"
   echo "  p Password for the Hive pipeline database"

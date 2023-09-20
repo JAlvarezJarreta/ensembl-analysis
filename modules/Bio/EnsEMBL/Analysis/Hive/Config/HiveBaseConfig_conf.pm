@@ -52,7 +52,7 @@ use Bio::EnsEMBL::ApiVersion qw/software_version/;
                 ensembl_release => $ENV{ENSEMBL_RELEASE},
                 genebuilder_id => $ENV{GENEBUILDER_ID} || 0,
                 email => $ENV{HIVE_EMAIL},
-                enscode_root_dir => $ENV{ENSCODE},
+                enscode_root_dir => $ENV{ENSEMBL_ROOT_DIR},
                 software_base_path => $ENV{LINUXBREW_HOME},
                 binary_base => catdir($self->o('software_base_path'), 'bin'),
 
@@ -104,7 +104,7 @@ sub default_options {
         ensembl_release => $ENV{ENSEMBL_RELEASE},
         genebuilder_id => $ENV{GENEBUILDER_ID} || 0,
         email_address => $ENV{HIVE_EMAIL},
-        enscode_root_dir => $ENV{ENSCODE},
+        enscode_root_dir => $ENV{ENSEMBL_ROOT_DIR},
         software_base_path => $ENV{LINUXBREW_HOME},
         binary_base => catdir($self->o('software_base_path'), 'bin'),
 

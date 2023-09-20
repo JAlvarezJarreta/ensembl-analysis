@@ -26,7 +26,7 @@ use parent ('Bio::EnsEMBL::Analysis::Hive::Config::HiveBaseConfig_conf');
 use File::Spec::Functions qw(catfile catdir);
 use Bio::EnsEMBL::ApiVersion qw/software_version/;
 use Bio::EnsEMBL::Analysis::Tools::Utilities qw(get_analysis_settings);
-use Env qw(ENSCODE);
+use Env qw(ENSEMBL_ROOT_DIR);
 
 sub default_options {
   my ($self) = @_;
@@ -1836,7 +1836,7 @@ sub pipeline_analyses {
                -logic_name => 'update_meta_coords',
                -module => 'Bio::EnsEMBL::Hive::RunnableDB::SystemCmd',
                -parameters => {
-                                 cmd => 'perl $ENSCODE/ensembl/misc-scripts/meta_coord/update_meta_coord.pl'.
+                                 cmd => 'perl $ENSEMBL_ROOT_DIR/ensembl/misc-scripts/meta_coord/update_meta_coord.pl'.
                                       ' -user '.$self->o('user_w').
                                       ' -pass '.$self->o('pass_w').
                                       ' -host '.$self->o('core_db','-host').
@@ -1950,7 +1950,7 @@ sub pipeline_analyses {
                                'coord_system_name'    => 'toplevel',
                                'target_db'            => $self->o('core_db'),
                                'output_path'          => $self->o('output_dir')."/genome_dumps/",
-                               'enscode_root_dir'     => "$ENSCODE",
+                               'enscode_root_dir'     => "$ENSEMBL_ROOT_DIR",
                                'species_name'         => $self->o('species_name'),
                                'repeat_logic_names'   => $self->o('repeat_logic_names'),
                                'patch_only'           => 1,
@@ -2249,7 +2249,7 @@ sub pipeline_analyses {
               -logic_name => 'set_repeat_types',
               -module => 'Bio::EnsEMBL::Hive::RunnableDB::SystemCmd',
               -parameters => {
-                               cmd => 'perl $ENSCODE/ensembl/misc-scripts/repeats/repeat-types.pl'.
+                               cmd => 'perl $ENSEMBL_ROOT_DIR/ensembl/misc-scripts/repeats/repeat-types.pl'.
                                       ' -user '.$self->o('user_w').
                                       ' -pass '.$self->o('pass_w').
                                       ' -host '.$self->o('core_db','-host').
@@ -2264,7 +2264,7 @@ sub pipeline_analyses {
               -logic_name => 'set_meta_coords',
               -module => 'Bio::EnsEMBL::Hive::RunnableDB::SystemCmd',
               -parameters => {
-                               cmd => 'perl $ENSCODE/ensembl/misc-scripts/meta_coord/update_meta_coord.pl'.
+                               cmd => 'perl $ENSEMBL_ROOT_DIR/ensembl/misc-scripts/meta_coord/update_meta_coord.pl'.
                                       ' -user '.$self->o('user_w').
                                       ' -pass '.$self->o('pass_w').
                                       ' -host '.$self->o('core_db','-host').
@@ -2279,7 +2279,7 @@ sub pipeline_analyses {
               -logic_name => 'set_meta_levels',
               -module => 'Bio::EnsEMBL::Hive::RunnableDB::SystemCmd',
               -parameters => {
-                               cmd => 'perl $ENSCODE/ensembl/misc-scripts/meta_levels.pl'.
+                               cmd => 'perl $ENSEMBL_ROOT_DIR/ensembl/misc-scripts/meta_levels.pl'.
                                       ' -user '.$self->o('user_w').
                                       ' -pass '.$self->o('pass_w').
                                       ' -host '.$self->o('core_db','-host').

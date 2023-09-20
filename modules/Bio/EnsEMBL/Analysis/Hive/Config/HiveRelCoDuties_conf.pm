@@ -91,7 +91,7 @@ sub default_options {
         samtools => catfile($self->o('binary_base'), 'samtools'), # It might be better to give the absolute path, but I think it's ok
         webdev_nfs => '/nfs/production/panda/ensembl/production/ensemblftp/data_files',
 
-        enscode_root_dir => $ENV{ENSCODE},
+        enscode_root_dir => $ENV{ENSEMBL_ROOT_DIR},
         ensembl_analysis_dir => catdir($self->o('enscode_root_dir'), 'ensembl-analysis'),
         production_dir => catdir($self->o('enscode_root_dir'), 'ensembl-production'),
         check_datafiles_script => catfile($self->o('production_dir'), 'scripts', 'datafiles', 'check_datafiles.pl'),

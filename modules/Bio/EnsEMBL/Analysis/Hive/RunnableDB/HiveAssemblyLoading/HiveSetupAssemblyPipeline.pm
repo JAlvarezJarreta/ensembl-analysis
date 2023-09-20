@@ -118,7 +118,7 @@ sub parse_ftp_link_file {
   say REPORT_FILE "Reference DB port: ".$reference_db_port;
   say REPORT_FILE "Creation type for reference DB: ".$create_type;
   say REPORT_FILE "Pipeline DB server: ".$pipe_db_server;
-  say REPORT_FILE "ENSCODE root dir: ".$enscode_root_dir;
+  say REPORT_FILE "ENSEMBL_ROOT_DIR root dir: ".$enscode_root_dir;
   say REPORT_FILE "Primary assembly dir name: ".$primary_assembly_dir_name;
   say REPORT_FILE "Contigs source: ".$contigs_source."\n";
 

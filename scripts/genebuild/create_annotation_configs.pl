@@ -466,7 +466,7 @@ sub create_config {
 
   my $config_string = "";
   my $past_default_options = 0;
-  open(CONFIG,$ENV{ENSCODE}."/ensembl-analysis/modules/Bio/EnsEMBL/Analysis/Hive/Config/Genome_annotation_conf.pm") || throw("Could not open the config file");
+  open(CONFIG,$ENV{ENSEMBL_ROOT_DIR}."/ensembl-analysis/modules/Bio/EnsEMBL/Analysis/Hive/Config/Genome_annotation_conf.pm") || throw("Could not open the config file");
   while(my $line = <CONFIG>) {
     if($line =~ /sub pipeline_create_commands/) {
       $past_default_options = 1;

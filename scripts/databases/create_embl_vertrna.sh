@@ -18,7 +18,7 @@ BASE_ENA_FTP="ftp://ftp.ebi.ac.uk/pub/databases/ena/sequence/release/std"
 VERTRNADIR="$BLASTDB_DIR/vertrna"
 VERTRNA_FILE="embl_vertrna-1"
 BLAST_TYPE="ncbi"
-ENSEMBL_BASE=$ENSCODE
+ENSEMBL_BASE=$ENSEMBL_ROOT_DIR
 
 USAGE=0
 INIT_PIPE=1

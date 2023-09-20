@@ -60,7 +60,7 @@ Add gene attribute to the GAGE cluster (human only)
 
 =head1 EXAMPLE USAGE
 
-standaloneJob.pl Bio::EnsEMBL::Analysis::Hive::RunnableDB::HiveVegaPreparation -output_path $SCR9/vega_prep.out -dbhost genebuildX -dbname vega_81 -dbuser *** -dbpass *** -dbport 3306 -dnadbhost genebuildX -dnadbport 3306 -dnadbname ensembl_79 -check_vega_met_stop_dir $ENSCODE/ensembl-analysis/scripts/Merge
+standaloneJob.pl Bio::EnsEMBL::Analysis::Hive::RunnableDB::HiveVegaPreparation -output_path $SCR9/vega_prep.out -dbhost genebuildX -dbname vega_81 -dbuser *** -dbpass *** -dbport 3306 -dnadbhost genebuildX -dnadbport 3306 -dnadbname ensembl_79 -check_vega_met_stop_dir $ENSEMBL_ROOT_DIR/ensembl-analysis/scripts/Merge
 
 =cut
 

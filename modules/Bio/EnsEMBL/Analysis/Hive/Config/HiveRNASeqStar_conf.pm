@@ -81,7 +81,7 @@ sub default_options {
          output_dir => '',
         'merge_dir' => '',
         'sam_dir' => '',
-        'sequence_dump_script' => $ENV{ENSCODE}.'/ensembl-analysis/scripts/sequence_dump.pl',
+        'sequence_dump_script' => $ENV{ENSEMBL_ROOT_DIR}.'/ensembl-analysis/scripts/sequence_dump.pl',
         # Use this option to change the delimiter for your summary data
         # file.
         summary_file_delimiter => '\t',

@@ -43,8 +43,8 @@ my %target_db = (
 );
 
 my $enscode_root_dir;
-if (exists $ENV{ENSCODE}) {
-  $enscode_root_dir = $ENV{ENSCODE};
+if (exists $ENV{ENSEMBL_ROOT_DIR}) {
+  $enscode_root_dir = $ENV{ENSEMBL_ROOT_DIR};
 }
 else {
   $enscode_root_dir = cwd();
