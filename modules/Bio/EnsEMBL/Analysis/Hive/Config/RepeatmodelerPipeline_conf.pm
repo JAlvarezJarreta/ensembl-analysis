@@ -48,7 +48,6 @@ sub default_options {
 'pipeline_name'               => 'vertebrate_repeatmodeler',
 'ncbi_base_ftp'               => 'ftp://ftp.ncbi.nlm.nih.gov/genomes/all',
 'base_output_path'            => catfile($self->o('base_repeat_dir'),'pipeline_output_dir'),
-'binary_base'                 => '/nfs/software/ensembl/RHEL7/linuxbrew/bin',
 'default_mem'                 => '2900',
 'default_himem'               => '20000',
 'user'                        => $self->o('user_w'),

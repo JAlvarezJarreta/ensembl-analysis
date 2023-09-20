@@ -373,43 +373,43 @@ sub default_options {
 # Executable paths
 ########################
     'minimap2_genome_index'  => $self->o('faidx_genome_file').'.mmi',
-    'minimap2_path'          => '/hps/nobackup2/production/ensembl/fergal/coding/long_read_aligners/new_mm2/minimap2/minimap2',
-    'paftools_path'          => '/hps/nobackup2/production/ensembl/fergal/coding/long_read_aligners/new_mm2/minimap2/misc/paftools.js',
+    'minimap2_path'          => 'minimap2',
+    'paftools_path'          => 'paftools.js',
     'minimap2_batch_size'    => '5000',
 
     'blast_type' => 'ncbi', # It can be 'ncbi', 'wu', or 'legacy_ncbi'
-    'dust_path' => catfile($self->o('binary_base'), 'dustmasker'),
-    'trf_path' => catfile($self->o('binary_base'), 'trf'),
-    'eponine_java_path' => catfile($self->o('binary_base'), 'java'),
+    'dust_path' => 'dustmasker',
+    'trf_path' => 'trf',
+    'eponine_java_path' => 'java',
     'eponine_jar_path' => catfile($self->o('software_base_path'), 'opt', 'eponine', 'libexec', 'eponine-scan.jar'),
-    'cpg_path' => catfile($self->o('binary_base'), 'cpg_lh'),
-    'trnascan_path' => catfile($self->o('binary_base'), 'tRNAscan-SE'),
-    'repeatmasker_path' => catfile($self->o('binary_base'), 'RepeatMasker'),
-    'genscan_path' => catfile($self->o('binary_base'), 'genscan'),
+    'cpg_path' => 'cpg_lh',
+    'trnascan_path' => 'tRNAscan-SE',
+    'repeatmasker_path' => 'RepeatMasker',
+    'genscan_path' => 'genscan',
     'genscan_matrix_path' => catfile($self->o('software_base_path'), 'share', 'HumanIso.smat'),
-    'uniprot_blast_exe_path' => catfile($self->o('binary_base'), 'blastp'),
-    'blastn_exe_path' => catfile($self->o('binary_base'), 'blastn'),
-    'vertrna_blast_exe_path' => catfile($self->o('binary_base'), 'tblastn'),
-    'unigene_blast_exe_path' => catfile($self->o('binary_base'), 'tblastn'),
-    genewise_path => catfile($self->o('binary_base'), 'genewise'),
-    'exonerate_path'         => catfile($self->o('software_base_path'), 'opt', 'exonerate09', 'bin', 'exonerate'),
-    'cmsearch_exe_path'    => catfile($self->o('software_base_path'), 'bin', 'cmsearch'), # #'opt', 'infernal10', 'bin', 'cmsearch'),
-    indicate_path  => catfile($self->o('binary_base'), 'indicate'),
-    pmatch_path  => catfile($self->o('binary_base'), 'pmatch'),
-    exonerate_annotation => catfile($self->o('binary_base'), 'exonerate'),
-    samtools_path => catfile($self->o('binary_base'), 'samtools'), #You may need to specify the full path to the samtools binary
+    'uniprot_blast_exe_path' => 'blastp',
+    'blastn_exe_path' => 'blastn',
+    'vertrna_blast_exe_path' => 'tblastn',
+    'unigene_blast_exe_path' => 'tblastn',
+    genewise_path => 'genewise',
+    'exonerate_path'         => 'exonerate',
+    'cmsearch_exe_path'    => 'cmsearch',
+    indicate_path  => 'indicate',
+    pmatch_path  => 'pmatch',
+    exonerate_annotation => 'exonerate',
+    samtools_path => 'samtools', #You may need to specify the full path to the samtools binary
     picard_lib_jar => catfile($self->o('software_base_path'), 'Cellar', 'picard-tools', '2.6.0', 'libexec', 'picard.jar'), #You need to specify the full path to the picard library
-    bwa_path => catfile($self->o('software_base_path'), 'opt', 'bwa-051mt', 'bin', 'bwa'), #You may need to specify the full path to the bwa binary
-    refine_ccode_exe => catfile($self->o('binary_base'), 'RefineSolexaGenes'), #You may need to specify the full path to the RefineSolexaGenes binary
-    interproscan_exe => catfile($self->o('binary_base'), 'interproscan.sh'),
-    bedtools => catfile($self->o('binary_base'), 'bedtools'),
-    bedGraphToBigWig => catfile($self->o('binary_base'), 'bedGraphToBigWig'),
-    'cesar_path' => catdir($self->o('software_base_path'),'opt','cesar','bin'),
+    bwa_path => 'bwa', #You may need to specify the full path to the bwa binary
+    refine_ccode_exe => 'RefineSolexaGenes', #You may need to specify the full path to the RefineSolexaGenes binary
+    interproscan_exe => 'interproscan.sh',
+    bedtools => 'bedtools',
+    bedGraphToBigWig => 'bedGraphToBigWig',
+    'cesar_path' => catdir($self->o('software_base_path'), 'opt', 'cesar', 'bin', 'cesar'),
 
     'uniprot_genblast_batch_size' => 15,
     'uniprot_table_name'          => 'uniprot_sequences',
 
-    'genblast_path'     => catfile($self->o('binary_base'), 'genblast'),
+    'genblast_path'     => 'genblast',
     'genblast_eval'     => $self->o('blast_type') eq 'wu' ? '1e-20' : '1e-1',
     'genblast_cov'      => '0.5',
     'genblast_pid'      => '30',
@@ -774,12 +774,11 @@ sub default_options {
 
     # LastZ is used to align the genomes
     'pair_aligner_exe'  => $self->o('lastz_exe'),
-    'cellar_dir'                        => '/nfs/software/ensembl/RHEL7-JUL2017-core2/linuxbrew/Cellar/',
-    'lastz_exe'                         => catfile($self->o('cellar_dir'),'lastz/1.04.00/bin/lastz'),
-    'axtChain_exe'                      => catfile($self->o('cellar_dir'),'kent/v335_1/bin/axtChain'),
-    'chainNet_exe'                      => catfile($self->o('cellar_dir'),'kent/v335_1/bin/chainNet'),
-    'faToNib_exe'                       => catfile($self->o('cellar_dir'),'kent/v335_1/bin/faToNib'),
-    'lavToAxt_exe'                      => catfile($self->o('cellar_dir'),'kent/v335_1/bin/lavToAxt'),
+    'lastz_exe'                         => 'lastz',
+    'axtChain_exe'                      => 'axtChain',
+    'chainNet_exe'                      => 'chainNet',
+    'faToNib_exe'                       => 'faToNib',
+    'lavToAxt_exe'                      => 'lavToAxt',
     'compare_beds_exe'                  => catfile($self->o('enscode_root_dir'),'ensembl-compara/scripts/pipeline/compare_beds.pl'),
     'create_pair_aligner_page_exe'      => catfile($self->o('enscode_root_dir'),'ensembl-compara/scripts/report/create_pair_aligner_page.pl'),
     'dump_features_exe'                 => catfile($self->o('enscode_root_dir'),'ensembl-compara/scripts/dumps/DumpMultiAlign.pl'),

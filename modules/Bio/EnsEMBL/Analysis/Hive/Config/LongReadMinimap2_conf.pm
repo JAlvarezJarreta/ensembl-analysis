@@ -37,8 +37,8 @@ sub default_options {
 # Shouldn't need to set these
 'minimap2_genome_index'  => $self->o('faidx_genome_file').'.mmi',
 'use_genome_flatfile'    => 1,
-'minimap2_path'          => '/hps/nobackup2/production/ensembl/fergal/coding/long_read_aligners/new_mm2/minimap2/minimap2',
-'paftools_path'          => '/hps/nobackup2/production/ensembl/fergal/coding/long_read_aligners/new_mm2/minimap2/misc/paftools.js',
+'minimap2_path'          => 'minimap2',
+'paftools_path'          => 'paftools.js',
 'minimap2_batch_size'    => '5000',
 'rnaseq_ftp_base'        => 'ftp://ftp.sra.ebi.ac.uk/vol1/fastq/',
 'long_read_columns'      => ['sample','filename'],
@@ -50,15 +50,14 @@ sub default_options {
 'protein_blast_index'    => '' || catdir($self->o('base_blast_db_path'), 'uniprot', $self->o('uniprot_version'), 'PE12_vertebrata_index'),
 
 'blast_type' => 'ncbi', # It can be 'ncbi', 'wu', or 'legacy_ncbi'
-'uniprot_blast_exe_path' => catfile($self->o('binary_base'), 'blastp'),
-'samtools_path'         => '/nfs/software/ensembl/RHEL7-JUL2017-core2/linuxbrew/bin/samtools',
+'uniprot_blast_exe_path' => 'blastp',
+'samtools_path'         => 'samtools',
 'use_threads'           => 1,
 
 'enscode_root_dir'      => '' || $ENV{ENSEMBL_ROOT_DIR}, # git repo checkouts
 
 'pipeline_name'         => '' || $self->o('production_name').'_'.$self->o('release_number').'_lrminimap2',
 
-'binary_base'           => '/nfs/software/ensembl/RHEL7-JUL2017-core2/linuxbrew/bin',
 'clone_db_script_path'  => catfile($self->o('enscode_root_dir'), 'ensembl-analysis', 'scripts', 'clone_database.ksh'),
 'default_mem'           => '1900',
 

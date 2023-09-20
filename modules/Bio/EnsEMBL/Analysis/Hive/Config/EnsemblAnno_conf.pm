@@ -109,7 +109,7 @@ sub default_options {
     'store_rejected'       => 0,
 
     'agat_singularity_image'  => '/hps/software/users/ensembl/genebuild/ftricomi/singularity/test-agat.simg',
-    'busco_singularity_image' => '/hps/software/users/ensembl/genebuild/ftricomi/singularity/busco-v5.1.2_cv1.simg',
+    'busco_singularity_image' => catfile( $ENV{NXF_SINGULARITY_CACHEDIR}, 'ezlabgva-busco-v5.4.7_cv1.img' ),
 
 ########################
 ## Small ncRNAs params
@@ -262,8 +262,8 @@ sub default_options {
 # Executable paths
 ########################
     'minimap2_genome_index' => $self->o('faidx_genome_file') . '.mmi',
-    'minimap2_path'         => '/hps/software/users/ensembl/ensw/C8-MAR21-sandybridge/linuxbrew/bin/minimap2',
-    'paftools_path'         => '/hps/software/users/ensembl/ensw/C8-MAR21-sandybridge/linuxbrew/bin/paftools.js',
+    'minimap2_path'         => 'minimap2',
+    'paftools_path'         => 'paftools.js',
     'minimap2_batch_size'   => '5000',
 
     'blast_type'             => 'ncbi',                                                                                                   # It can be 'ncbi', 'wu', or 'legacy_ncbi'
@@ -659,12 +659,11 @@ sub default_options {
 
     # LastZ is used to align the genomes
     'pair_aligner_exe'             => $self->o('lastz_exe'),
-    'cellar_dir'                   => '/nfs/software/ensembl/RHEL7-JUL2017-core2/linuxbrew/Cellar/',
-    'lastz_exe'                    => catfile( $self->o('cellar_dir'),       'lastz/1.04.00/bin/lastz' ),
-    'axtChain_exe'                 => catfile( $self->o('cellar_dir'),       'kent/v335_1/bin/axtChain' ),
-    'chainNet_exe'                 => catfile( $self->o('cellar_dir'),       'kent/v335_1/bin/chainNet' ),
-    'faToNib_exe'                  => catfile( $self->o('cellar_dir'),       'kent/v335_1/bin/faToNib' ),
-    'lavToAxt_exe'                 => catfile( $self->o('cellar_dir'),       'kent/v335_1/bin/lavToAxt' ),
+    'lastz_exe'                    => 'lastz',
+    'axtChain_exe'                 => 'axtChain',
+    'chainNet_exe'                 => 'chainNet',
+    'faToNib_exe'                  => 'faToNib',
+    'lavToAxt_exe'                 => 'lavToAxt',
     'compare_beds_exe'             => catfile( $self->o('enscode_root_dir'), 'ensembl-compara/scripts/pipeline/compare_beds.pl' ),
     'create_pair_aligner_page_exe' => catfile( $self->o('enscode_root_dir'), 'ensembl-compara/scripts/report/create_pair_aligner_page.pl' ),
     'dump_features_exe'            => catfile( $self->o('enscode_root_dir'), 'ensembl-compara/scripts/dumps/DumpMultiAlign.pl' ),

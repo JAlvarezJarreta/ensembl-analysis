@@ -999,10 +999,10 @@ def run_trnascan_regions(
 ):
 
     if not trnascan_path:
-        trnascan_path = "/hps/software/users/ensembl/ensw/C8-MAR21-sandybridge/linuxbrew/bin/tRNAscan-SE"
+        trnascan_path = "tRNAscan-SE"
     logging.info(trnascan_path)
     if not trnascan_filter_path:
-        trnascan_filter_path = "/hps/software/users/ensembl/ensw/C8-MAR21-sandybridge/linuxbrew/bin/EukHighConfidenceFilter"
+        trnascan_filter_path = "EukHighConfidenceFilter"
     logging.info(trnascan_filter_path)
     check_exe(trnascan_path)
     logging.info(trnascan_path)
